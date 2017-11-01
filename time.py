@@ -10,6 +10,8 @@ cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&
 
 ret, frame = cap.read()
 
+print(frame.shape)
+
 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB);
 cv2.imwrite('cam.png', frame)
 cmd = "./darknet detector test cfg/coco.data cfg/yolo.2.0.cfg yolo.2.0.weights cam.png"# -thresh .2"
