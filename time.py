@@ -10,7 +10,7 @@ cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&
 
 ret, frame = cap.read()
 
-print(frame.shape)
+print(cap)
 
 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB);
 cv2.imwrite('cam.png', frame)
