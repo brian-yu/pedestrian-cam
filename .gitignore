@@ -19,6 +19,7 @@ cfg/
 darknet
 .fuse*
 yolo.weights
+yolo.2.0.weights
 
 # OS Generated #
 .DS_Store*
