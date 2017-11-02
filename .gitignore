@@ -20,6 +20,7 @@ darknet
 .fuse*
 yolo.weights
 yolo.2.0.weights
+log.txt
 
 # OS Generated #
 .DS_Store*
