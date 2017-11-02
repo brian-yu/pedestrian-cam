@@ -7,7 +7,7 @@ def hello():
 
 @app.route('/predictions')
 def get_image():
-    return send_file('predictions.png', mimetype='image/gif')
+    return send_file('predictions.png', mimetype='image/png')
 
 if __name__ == "__main__":
     app.run()
