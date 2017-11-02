@@ -21,6 +21,8 @@ darknet
 yolo.weights
 yolo.2.0.weights
 log.txt
+bar.txt
+restaurant.txt
 
 # OS Generated #
 .DS_Store*

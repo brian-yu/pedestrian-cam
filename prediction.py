@@ -32,7 +32,7 @@ while True:
         numPeople = len([i.split(":")[0] for i in output if i.split(":")[0] == 'person'])
         print(output[0])
         print("{} - {} people detected.".format(time.strftime("%d %b %Y %H:%M:%S", time.localtime()), numPeople))
-        with open("log.txt", "a") as myfile:
+        with open("{}.txt".format(scene), "a") as myfile:
             myfile.write("{},{}\n".format(last, numPeople))
     except:
         print(err)
