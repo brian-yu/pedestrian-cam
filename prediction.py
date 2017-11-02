@@ -5,10 +5,17 @@ from matplotlib import pyplot as plt
 import subprocess
 import os
 import redis
+import sys
+
+scene = sys.argv[1] if len(sys.argv) > 1 else "restaurant"
 
 while True:
     last = time.time()
-    cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&amp;amp;Quality=Clarity&amp;amp;1509566566')
+
+    if scene == "restaurant":
+        cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&amp;amp;Quality=Clarity&amp;amp;1509566566')
+    elif scene == "bar":
+        cap = cv2.VideoCapture('http://24.103.196.243/cgi-bin/viewer/video.jpg?r=1509388702')
 
     ret, frame = cap.read()
 
