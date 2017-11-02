@@ -35,5 +35,5 @@ while True:
         with open("{}.txt".format(scene), "a") as myfile:
             myfile.write("{},{}\n".format(last, numPeople))
     except:
-        print(err)
+        print(sys.exc_info()[0])
         continue
