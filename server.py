@@ -9,6 +9,10 @@ def hello():
 def get_image():
     return send_file('predictions.png', mimetype='image/png')
 
+@app.route('/cam')
+def get_image():
+    return send_file('cam.png', mimetype='image/png')
+
 @app.route('/log')
 def get_image():
     return send_file('log.txt')
