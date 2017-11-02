@@ -6,7 +6,7 @@ import os
 
 
 start = time.time()
-cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&amp;amp;Quality=Clarity&amp;amp;1509566566')
+cap = cv2.VideoCapture('http://24.103.196.243/cgi-bin/viewer/video.jpg?r=1509388702')
 
 ret, frame = cap.read()
 
