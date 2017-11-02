@@ -2,6 +2,7 @@ import cv2
 import time
 import subprocess
 import os
+import sys
 
 
 
@@ -14,7 +15,11 @@ print(cap.read())
 
 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB);
 cv2.imwrite('cam.png', frame)
-cmd = "./darknet detector test cfg/coco.data cfg/yolo.2.0.cfg yolo.2.0.weights cam.png"# -thresh .2"
+
+if sys.argv[1] == "2":
+    cmd = "./darknet detector test cfg/coco.data cfg/yolo.2.0.cfg yolo.2.0.weights cam.png"# -thresh .2"
+else:
+    cmd = "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights cam.png"
 #output = subprocess.check_output(cmd.split(), stdout=open(os.devnull, 'w'))
 
 output = subprocess.check_output(cmd.split())
