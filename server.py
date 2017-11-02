@@ -15,7 +15,15 @@ def get_cam():
 
 @app.route('/log')
 def get_log():
-    return send_file('log.txt')
+    return send_file('bar.txt')
+
+@app.route('/bar')
+def get_bar():
+    return send_file('bar.txt')
+
+@app.route('/restaurant')
+def get_restaurant():
+    return send_file('restaurant.txt')
 
 if __name__ == "__main__":
     app.run()
