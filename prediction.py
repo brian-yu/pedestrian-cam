@@ -1,39 +1,43 @@
 import cv2
 import time
-import seaborn as sns
-from matplotlib import pyplot as plt
 import subprocess
-import os
-import redis
 import sys
-
-scene = sys.argv[1] if len(sys.argv) > 1 else "restaurant"
+import os
 
 while True:
     try:
         last = time.time()
 
-        if scene == "restaurant":
-            cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&amp;amp;Quality=Clarity&amp;amp;1509566566')
-        elif scene == "bar":
-            cap = cv2.VideoCapture('http://24.103.196.243/cgi-bin/viewer/video.jpg?r=1509388702')
+        cap = cv2.VideoCapture('http://84.35.225.233:83/SnapshotJPEG?Resolution=640x480&amp;amp;Quality=Clarity&amp;amp;1509566566')
 
         ret, frame = cap.read()
 
+        # Convert to RGB
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB);
+        
         cv2.imwrite('cam.png', frame)
-        cmd = "./darknet detector test cfg/coco.data cfg/yolo.2.0.cfg yolo.2.0.weights cam.png"# -thresh .2"
-        #output = subprocess.check_output(cmd.split(), stdout=open(os.devnull, 'w'))
+        
+        cmd = "./darknet detector test cfg/coco.data cfg/yolo.2.0.cfg yolo.2.0.weights cam.png"# optional flag: -thresh .2"
 
         output = subprocess.check_output(cmd.split())
 
         output = output.decode("utf-8").split("\n")
         
+        # Count the number of lines that contain "person"
         numPeople = len([i.split(":")[0] for i in output if i.split(":")[0] == 'person'])
+
         print(output[0])
         print("{} - {} people detected.".format(time.strftime("%d %b %Y %H:%M:%S", time.localtime()), numPeople))
-        with open("{}.txt".format(scene), "a") as myfile:
+
+        with open("restaurant.txt", "a") as myfile:
             myfile.write("{},{}\n".format(last, numPeople))
+
+    # On keyboard interrupt, terminate program
+    except KeyboardInterrupt:
+        print("Program exiting")
+        break
+
+    # If an unknown exception occurs, print it and continue looping.
     except:
         print(sys.exc_info()[0])
         continue
