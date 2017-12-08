@@ -2,7 +2,6 @@ import cv2
 import time
 import subprocess
 import sys
-import os
 
 while True:
     try:
