@@ -24,6 +24,22 @@ log.txt
 bar.txt
 restaurant.txt
 
+#yolo
+yolo/
+test/
+src/
+scripts/
+results/
+python/
+obj/
+include/
+examples/
+data/
+.ipynb_checkpoints/
+Makefile
+libdarknet.a
+libdarknet.so
+
 # OS Generated #
 .DS_Store*
 ehthumbs.db
