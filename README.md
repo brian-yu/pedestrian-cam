@@ -5,8 +5,9 @@ This is the repository for the project talked about in this [blog post](https://
 
 ## How to get up and running:
 1. Clone YOLO & Darknet
-
-	`git clone https://github.com/pjreddie/darknet`
+	```bash
+	git clone https://github.com/pjreddie/darknet
+	```
 
 2. Clone this repository into the same directory
 	```bash
