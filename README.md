@@ -17,5 +17,5 @@ This is the repository for the project talked about in this [blog post](https://
 	```
 
 3. Run the files
-	For the webserver, run `server.py` and `prediction.py`
-	Otherwise, you can explore the Jupyter notebooks.
+	- For the webserver, run `server.py` and `prediction.py`
+	- Otherwise, you can explore the Jupyter notebooks.
