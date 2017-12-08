@@ -4,6 +4,10 @@
 This is the repository for the project talked about in this [blog post](https://www.byu.io/2017/12/07/counting-people-with-ml). 
 
 ## How to get up and running:
+
+0. Ensure you have prerequisite libraries
+	- Install Python 3 and OpenCV python
+
 1. Clone YOLO & Darknet
 	```bash
 	git clone https://github.com/pjreddie/darknet
