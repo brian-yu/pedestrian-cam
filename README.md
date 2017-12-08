@@ -20,6 +20,11 @@ This is the repository for the project talked about in this [blog post](https://
 	rm -r pedestrian-cam
 	```
 
-3. Run the files
+3. Download Yolo 2.0 weights
+	```bash
+	wget https://pjreddie.com/media/files/yolo.2.0.weights
+	```
+
+4. Run the files
 	- For the webserver, run `server.py` and `prediction.py`
 	- Otherwise, you can explore the Jupyter notebooks.
